@@ -274,18 +274,15 @@
         const Card2 = document.getElementById('Card2');
         const Result = document.getElementById('Result');
         let UserList = [];
-        function isPageFullscreen() {
-            return !!(document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
-        }
         window.onload = function () {
             let launch = 0;
-            // Video.addEventListener('ended', function () {
-            //     if (launch == 0) {
+            Video.addEventListener('ended', function () {
+                if (launch == 0) {
                     Video.style.display = 'none';
                     Panel.style.display = 'block';
                     launch = 1;
-            //     }
-            // });
+                }
+            });
             for (let i = 1; i <= 6; i++) {
                 UserList.push("<img src='assets/Users/" + i + ".jpg'>");
             }
