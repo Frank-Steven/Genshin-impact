@@ -310,13 +310,13 @@
         }
 
         let Load = 0;
-        Video.addEventListener("ended", () => {
-          if (Load == 0) {
+        // Video.addEventListener("ended", () => {
+        //   if (Load == 0) {
             Panel.style.display = "block";
             Video.style.display = "none";
-            Load = 1;
-          } else Video.removeEventListener("ended", () => {});
-        });
+        //     Load = 1;
+        //   } else Video.removeEventListener("ended", () => {});
+        // });
       };
 
       function Wish1() {
@@ -343,7 +343,7 @@
               t = 0;
             }
             t++;
-          }, 10);
+          }, 20);
           setTimeout(() => {
             clearInterval(interval);
             while (index1 === index2)
@@ -354,7 +354,7 @@
             CardSet.splice(index2, 1);
             Reset.style.display = "block";
           }, 5000);
-        }, 6000);
+        }, 100);
       }
 
       function reset() {
