@@ -310,13 +310,13 @@
         }
 
         let Load = 0;
-        // Video.addEventListener("ended", () => {
-        //   if (Load == 0) {
+        Video.addEventListener("ended", () => {
+          if (Load == 0) {
             Panel.style.display = "block";
             Video.style.display = "none";
-        //     Load = 1;
-        //   } else Video.removeEventListener("ended", () => {});
-        // });
+            Load = 1;
+          } else Video.removeEventListener("ended", () => {});
+        });
       };
 
       function Wish1() {
