@@ -317,13 +317,13 @@
         }
 
         let Load = 0;
-        Video.addEventListener("ended", () => {
-        if (Load == 0) {
-          Panel.style.display = "block";
-          Video.style.display = "none";
-          Load = 1;
-        } else Video.removeEventListener("ended", () => {});
-        });
+        // Video.addEventListener("ended", () => {
+          if (Load == 0) {
+            Panel.style.display = "block";
+            Video.style.display = "none";
+            Load = 1;
+          } else Video.removeEventListener("ended", () => {});
+        // });
       };
 
       function Wish1() {
@@ -388,8 +388,8 @@
               x++;
               t = 0;
               setTimeout(() => {
-                  Cardset.switchToPage(tmpPage);
-              }, 18);
+                Cardset.switchToPage(tmpPage);
+              }, 200);
               tmpPage = 1 - tmpPage;
             }
             t++;
