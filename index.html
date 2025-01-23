@@ -217,28 +217,36 @@
               src="assets\character-backgrounds\background-cryo.png"
               alt="一等奖"
             />
-            <span id="Reward1">一等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4</span>
+            <span id="Reward1"
+              >一等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4</span
+            >
           </button>
           <button onclick="Type2()">
             <img
               src="assets\character-backgrounds\background-electric.png"
               alt="二等奖"
             />
-            <span id="Reward2">二等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8</span>
+            <span id="Reward2"
+              >二等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8</span
+            >
           </button>
           <button onclick="Type3()">
             <img
               src="assets\character-backgrounds\background-geo.png"
               alt="三等奖"
             />
-            <span id="Reward3">三等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12</span>
+            <span id="Reward3"
+              >三等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12</span
+            >
           </button>
           <button onclick="Type4()">
             <img
               src="assets\character-backgrounds\background-pyro.png"
               alt="优秀奖"
             />
-            <span id="Reward4">优秀奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 24</span>
+            <span id="Reward4"
+              >优秀奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 24</span
+            >
           </button>
         </div>
         <div id="About">
@@ -283,32 +291,36 @@
         }
 
         let Load = 0;
-        Video.addEventListener("ended", () => {
+        // Video.addEventListener("ended", () => {
           if (Load == 0) {
-        Panel.style.display = "block";
-        Video.style.display = "none";
+            Panel.style.display = "block";
+            Video.style.display = "none";
             Load = 1;
           } else Video.removeEventListener("ended", () => {});
-        });
+        // });
       };
 
       function Wish1() {
         if (curType == 1) {
           if (Chance[0] <= 0) return;
           Chance[0] -= 1;
-          Reward1.innerHTML = "一等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[0];
+          Reward1.innerHTML =
+            "一等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[0];
         } else if (curType == 2) {
           if (Chance[1] <= 0) return;
           Chance[1] -= 2;
-          Reward2.innerHTML = "二等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[1];
+          Reward2.innerHTML =
+            "二等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[1];
         } else if (curType == 3) {
           if (Chance[2] <= 0) return;
           Chance[2] -= 4;
-          Reward3.innerHTML = "三等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[2];
+          Reward3.innerHTML =
+            "三等奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[2];
         } else if (curType == 4) {
           if (Chance[3] <= 0) return;
           Chance[3] -= 8;
-          Reward4.innerHTML = "优秀奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[3];
+          Reward4.innerHTML =
+            "优秀奖 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " + Chance[3];
         }
         Cardset.innerHTML = "";
         Panel.style.display = "none";
