@@ -272,7 +272,7 @@
       class MultiPage {
         pages = [];
         currentPage = 0;
-        display = []; // 确保这是一个实例变量
+        display = [];
         constructor(container, pages) {
           container.innerHTML = "";
           if (pages.length < 1) {
@@ -281,7 +281,6 @@
           this.pages = pages;
           this.pages.forEach((element) => {
             container.appendChild(element);
-            // 使用 this.display 而不是 display
             this.display.push(element.style.display);
             element.style.display = "none";
           });
@@ -292,7 +291,6 @@
           }
           this.pages[this.currentPage].style.display = "none";
           this.currentPage = pageIndex;
-          // 使用 this.display 而不是 display
           this.pages[this.currentPage].style.display =
             this.display[this.currentPage];
         }
@@ -354,7 +352,6 @@
           document.createElement("div"),
           document.createElement("div"),
         ];
-        // 我给这些页面添加了class，希望能通过这种方式从css中控制页面的样式，但并没有效果，问题如前面构造函数中提到的问题
         CardSetPages.forEach((element) => {
           element.className = "CardSet";
         });
