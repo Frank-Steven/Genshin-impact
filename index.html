@@ -272,14 +272,14 @@
       let CardCount = 1;
       let Chance = [4, 8, 12, 24];
       let curType = 1;
+      let imgTable = [];
 
       window.onload = () => {
         for (let i = 1; i <= 48; i++) {
           const img = new Image();
           img.src = "assets/Users/" + i + ".jpg"; // 预加载图片
-          CardSet.push(
-            "<div class='Card'><img src='assets/Users/" + i + ".jpg'></div>"
-          );
+          imgTable.push(img);
+          CardSet.push(i);
         }
 
         let Load = 0;
@@ -323,7 +323,6 @@
             index = [];
           let interval = setInterval(() => {
             if (t >= x) {
-              let str = "";
               index = [];
               for (let i = 0; i < CardCount; i++) {
                 let tmp = Math.floor(Math.random() * CardSet.length);
@@ -332,10 +331,13 @@
                 }
                 index.push(tmp);
               }
+              Cardset.innerHTML = "";
+              // Add cards to cardset using imgTable
               for (let i = 0; i < CardCount; i++) {
-                str += CardSet[index[i]];
+                Cardset.innerHTML += '<div class="Card"><img src="' + imgTable[
+                  CardSet[index[i]]
+                ].src + '" alt="卡片' + (i + 1) + '"></div>';
               }
-              Cardset.innerHTML = str;
               x++;
               t = 0;
             }
