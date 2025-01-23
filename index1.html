@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Genshin Impact</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="context">
+        <h1>Welcome to Genshin Impact</h1>
+        <p>This is a web application for Genshin Impact.</p>
+      </div>
+      <div class="context">
+        <h2>Context</h2>
+        <p>
+          Genshin Impact is a mobile game developed by miHoYo. It is a
+          role-playing game that takes place in the world of Mondstadt, a city
+          in the northeastern region of Liyue.
+        </p>
+      </div>
+      <div class="context">
+        <h2>Features</h2>
+        <ul>
+          <li>
+            <strong>Character selection:</strong> Choose from a wide range of
+            characters, including characters from different rarities and
+            professions.
+          </li>
+          <li>
+            <strong>Battle system:</strong> Fight battles with your characters
+            to earn rewards and experience points.
+          </li>
+          <li>
+            <strong>Shop:</strong> Purchase items from the in-game store to
+            enhance your character's abilities and equipment.
+          </li>
+          <li>
+            <strong>Quests:</strong> Complete quests to earn rewards and
+            experience points.
+          </li>
+        </ul>
+      </div>
+      <div class="context">
+        <h2>Download</h2>
+        <p>
+          Genshin Impact is available on both iOS and Android platforms. You can
+          download the game from the official website or through the app stores.
+        </p>
+      </div>
+    </div>
+    <script>
+      let windowHeight, windowWidth, pageHeight;
+      let page = 0;
+      let contexts = document.querySelectorAll(".context");
+      function updateDimensions() {
+        windowHeight = window.innerHeight;
+        windowWidth = window.innerWidth;
+        pageHeight = windowHeight / 3;
+      }
+      resize();
+      updateDimensions();
+      window.addEventListener("resize", resize);
+      function resize(event) {
+        updateDimensions();
+        document.getElementById("app").style.height =
+          pageHeight * (contexts.length - 1) + windowHeight * 1.2 + "px";
+        changeContext();
+      }
+      window.addEventListener("scroll", (event) => {
+        let scrollY = window.scrollY;
+        page = Math.floor((scrollY + pageHeight / 10) / pageHeight);
+        changeContext();
+      });
+      function changeContext() {
+        contexts.forEach((element) => {
+          element.style.opacity = 0;
+          element.style.height = pageHeight + "px";
+        });
+        contexts[page].style.opacity = 1;
+        contexts[page].style.height = windowHeight + "px";
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+      }
+      #app {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .context {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+      }
+    </style>
+  </body>
+</html>
